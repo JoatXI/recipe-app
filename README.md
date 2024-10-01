@@ -3,6 +3,9 @@ This is a group project which showcases our DevOps skills, to design, develop, a
 
 ### Group Member
 Omoohwo Ohwoduadjeke
+
 Merle Gierling
+
 Antonio Leone
+
 Adetunji Teejay Adedosu
