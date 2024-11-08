@@ -1,321 +1,234 @@
 import express from 'express';
- 
 import Database from 'better-sqlite3';
- 
-import * as crypto from 'crypto';
- 
-import betterSqlite3Session from 'express-session-better-sqlite3';
- 
+import betterSqlite3Session from 'express-session-better-sqlite3'; 
 import expressSession from 'express-session';
- 
- 
- 
+import * as crypto from 'crypto';
+import fileUpload from 'express-fileupload';
+
 const PORT = process.env.PORT || 3000;
- 
- 
- 
-const app = express();
- 
-const db = new Database('THERecipe.db');
- 
+
+const app = express(); 
+const db = new Database('recipe.db');
 const sessDb = new Database('session.db');
- 
- 
- 
 const SqliteStore = betterSqlite3Session(expressSession, sessDb);
- 
- 
- 
-app.use(express.json());
- 
- 
- 
+
+app.use(express.json()); 
 app.use(express.static('public'));
- 
- 
- 
+app.use(fileUpload());
 const pass = crypto.randomBytes(32).toString('hex');
- 
- 
- 
+
 app.use(expressSession({
- 
     store: new SqliteStore(),
- 
- 
- 
     secret: pass,
- 
     resave: true,
- 
- 
- 
     saveUninitialized: false,
- 
     rolling: true,
- 
- 
- 
     unset: 'destroy',
- 
     proxy: true,
- 
- 
- 
+    
     cookie: {
- 
-        maxAge: 600000, // 600000 ms = 10 mins expiry time
- 
-        httpOnly: false // allow client-side code to access the cookie, otherwise it's kept to the HTTP messages
- 
+        maxAge: 600000,
+        httpOnly: false
     }
- 
 }));
  
- 
- 
 app.get('/', (req, res) => {
- 
     res.send('Recipe Application');
-    res.send(req.body);
 });
- 
-//------------------------------Recipe API-------------------------
- 
- 
-//
-//Deletes a Recipe via RecipeID
-app.delete("/api/recipe/:recipeID",(req,res) =>{
- 
-    const query1 = db.prepare( 'DELETE FROM LikedRecipes WHERE RecipeID  = ?');
-    const result1 = query1.run(req.params.recipeID)
-   const query2 = db.prepare( 'DELETE FROM Comments WHERE RecipeID  = ?');
-    const result2 = query2.run(req.params.recipeID);
-     const query3 = db.prepare( 'DELETE FROM Recipes WHERE id = ?');
- 
-     const result3 = query3.run(req.params.recipeID);
- 
-   res.send('Success');
- 
-   
- 
-});
- 
- 
-//
-//Enpoint API for recipe with UserID
-app.get("/api/recipe/user/:userID", (req,res) => {
- 
-   
-       
-        const query = db.prepare( 'Select * from Recipes   where userID = ?');
- 
-        const result = query.all(re.params)
-   
-        res.json(result);
- 
-});
- 
- 
-//
-//Enpoint API for recipe with recipeID
-app.get("/api/recipe/:recipeID", (req,res) => {
- 
-   
-    const stmt = db.prepare('SELECT * FROM recipes where id = ?');
- 
-        const results = stmt.all(req.params.recipeID);
- 
-        res.json(results);
- 
-});
- 
- 
-//
-// endpoint api for creating a Recipe
-app.post('/api/recipe/', (req, res) => {
- 
-    res.send(req.body);
- 
-  });
- 
- 
- 
-//------------------------------Recipe API End-------------------------
- 
- 
- 
- 
- 
- 
-//
-// What porpuse has this?
-app.get('/recipe/:name', (req, res) => {
- 
+
+// User-related routes
+app.post('/register', (req, res) => {
     try {
- 
-        const stmt = db.prepare('SELECT * FROM cuisines WHERE name = ?');
- 
-        const results = stmt.all(req.params.name);
- 
-        res.json(results);
- 
-    } catch(error) {
- 
-        res.status(500).json({ error: error });
- 
-       
- 
+        const { username, email, password } = req.body;
+        const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+        const stmt = db.prepare('INSERT INTO Users (username, email, password, is_admin) VALUES (?, ?, ?, ?)');
+        stmt.run(username, email, hashedPassword, 0);
+        res.status(200).json({ message: 'User created' });
+    } catch (error) {
+        res.status(500).json({ message: error });
     }
- 
 });
- 
- 
- 
-//------------------------------User API-------------------------
- 
- 
- 
- 
-//
-//API endpoint for Getting UserData with username
-app.get('/api/user/:username',(req,res) =>{
- 
-   
- 
-    const query = db.prepare('Select * from User where username= ?');
- 
-    const result = query.all(req.params.username);
- 
-    res.json(result);
- 
- 
- 
+
+app.post('/login', (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+        const stmt = db.prepare('SELECT * FROM Users WHERE username = ? AND password = ?');
+        const user = stmt.get(username, hashedPassword);
+        if (user) {
+            req.session.user = { id: user.id, username: user.username, isAdmin: user.is_admin };
+            res.status(200).json({ message: 'Login successful' });
+        } else {
+            res.status(401).json({ message: 'Invalid username or password' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
 });
- 
- 
- 
-//
-//API endpoint for Getting UserData with User Object
-app.get('/api/user/',(req,res) =>{
- 
-   
- 
-    const query = db.prepare('Select * from User where Username = ? AND password = ?');
- 
-    const result = query.all(req.body.username, req.body.password)
- 
-    res.json(result);
- 
+
+app.get('/logout', (req, res) => {
+    try {
+        req.session.destroy();
+        res.status(200).json({ message: 'Logged out' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
 });
- 
- 
- 
-//------------------------------User API End-------------------------
- 
-//------------------------------Likes API-------------------------
- 
-//
-//Enpoint api for getting all likes from a recipe
-app.get("/api/likes/:recipeID", (req,res) => {
- 
-   
-       
-    const query = db.prepare( 'Select * from LikedRecipes where recipeID = ?');
- 
-    const result = query.all(req.params.recipeID)
- 
-    res.json(result);
- 
+
+app.put('/user/update', (req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(403).json({ message: 'You must be logged in to update your profile' });
+        }
+        const { username, password } = req.body;
+        const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+        const stmt = db.prepare('UPDATE Users SET username = ?, password = ? WHERE id = ?');
+        stmt.run(username, hashedPassword, req.session.user.id);
+        req.session.user.username = username;
+        res.status(200).json({ message: 'Profile updated' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
 });
- 
-//
-// enpoint api for upserting any likes
-app.post("/api/likes/", (req,res) => {
- 
- 
-        const {Username,RecipeID} = req.body;
-   
-        db.query('INSERT INTO likedrecipes (Username,RecipeID) VALUES (?, ? )', [Username,RecipeID], (err, result) => {
-         
-            if (err) throw err;
-            res.json({ message: 'Recipe added successfully', id: result.insertId });
-       
-        });
-      });
- 
- 
- 
- 
-//
-// Work in Progress endpoint api for Updating RecipeLikes
- 
-  app.put('/api/recipe/update/:recipeID', (req, res) => {
-    const currentLike = req.body.likes;
-    const newLikes = currentLike + 1;
-    db.query('UPDATE likedrecipes SET likes = ? WHERE recipeId = ?', [newLikes, req.params.recipeID], (err) => {
-      if (err) throw err;
-      res.json({ message: 'Recipe likes updatedsuccessfully' });
-    });
-  });
- 
- 
- 
- 
-//------------------------------Likes API End-------------------------
- 
- 
-//------------------------------recipe API-------------------------
- 
- 
-//
-// Work in Progress endpoint API for creating Comment
- 
-app.get("/api/comment/update/", (req,res) => {
- 
- 
- 
-      const stmt = db.prepare('Create Comments (username, recipeid, commenttext) values (?,?,?)');
-      const result = stmt.all(req.body.username,req.body.recipeID,req.body.commentText);
- 
-      res.send('Inserted Comment succesfully');
-   
-     
-   
- 
- 
+
+app.post('/user/upload', (req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(403).json({ message: 'You must be logged in to update your profile picture' });
+        }
+        if (data) {
+            const {data} = req.files.className;
+            const stmt = db.prepare('INSERT INTO Users (profile_picture) VALUES (?)');
+            stmt.run(data);
+            res.status(200).json({ message: 'Profile picture uploaded' });
+        } else {
+            res.status(400).json({ message: 'No profile picture provided' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
 });
- 
- 
-//
-//Work in progress endpoint api for deleting comments
-app.get("/api/comment/:recipeID", (req,res) => {
- 
- 
-const query = db.prepare('Select * from Comments where RecipeID = ?' );
-const result = query.all(req.params.recipeID);
-   
-res.json(result);
- 
- 
+
+app.get('user/image/:id', (req, res) => {
+    try {
+        const stmt = db.prepare('SELECT profile_picture FROM Users WHERE id =?');
+        const user = stmt.get(req.params.id);
+        if (user && user.profile_picture) {
+            res.set('Content-Type', 'image/jpeg');
+            res.send(user.profile_picture);
+        } else {
+            res.status(404).json({ message: 'Profile picture not found' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
 });
- 
-//
-//Work in progress endpoint api for updating comment
-//app.get("api/comment/", (req,res) => {
- 
-   
- 
- 
-//});
- 
- 
-//------------------------------Comment API ENd-------------------------
- 
- 
- 
+
+app.delete('/user/:id', (req, res) => {
+    try {
+        if (!req.session.user || !req.session.user.isAdmin) {
+            return res.status(401).json({ message: 'Only admin users can delete users' });
+          }
+          const stmt = db.prepare('DELETE FROM Users WHERE id = ?');
+          stmt.run(req.params.id);
+          res.status(200).json({ message: 'User deleted' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+// Recipe-related routes
+app.post('/recipes', (req, res) => {
+    try {
+        if (!req.session.user || !req.session.user.isAdmin) {
+            return res.status(401).json({ message: 'Only admin users can create recipes' });
+        }
+        const { name, steps, description, ingredients } = req.body;
+        const stmt = db.prepare('INSERT INTO Recipes (name, steps, description, ingredients, created_by) VALUES (?, ?, ?, ?, ?)');
+        stmt.run(name, steps, description, ingredients, req.session.user.id);
+        res.status(201).json({ message: 'Recipe created' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.get('/recipes', (req, res) => {
+    try {
+        const stmt = db.prepare('SELECT * FROM Recipes');
+        const recipes = stmt.all();
+        res.status(200).json(recipes);
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.put('/recipes/:id', (req, res) => {
+    try {
+        if (!req.session.user || !req.session.user.isAdmin) {
+            return res.status(401).json({ message: 'Only admin users can edit recipes' });
+        }
+        const { name, steps, description, ingredients } = req.body;
+        const stmt = db.prepare('UPDATE Recipes SET name = ?, steps = ?, description = ?, ingredients = ? WHERE id = ?');
+        stmt.run(name, steps, description, ingredients, req.params.id);
+        res.status(200).json({ message: 'Recipe updated' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.post('/recipes/:id/like', (req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(403).json({ message: 'You must be logged in to like a recipe' });
+        }
+        const stmt = db.prepare('INSERT INTO LikedRecipes (user_id, recipe_id) VALUES (?, ?)');
+        stmt.run(req.session.user.id, req.params.id);
+        res.status(201).json({ message: 'Recipe liked' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.delete('/recipes/:id/like', (req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(403).json({ message: 'You must be logged in to unlike a recipe' });
+        }
+        const stmt = db.prepare('DELETE FROM LikedRecipes WHERE user_id = ? AND recipe_id = ?');
+        stmt.run(req.session.user.id, req.params.id);
+        res.status(200).json({ message: 'Recipe unliked' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.post('/recipes/:id/comments', (req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(403).json({ message: 'You must be logged in to comment on a recipe' });
+        }
+        const { content } = req.body;
+        const stmt = db.prepare('INSERT INTO Comments (user_id, recipe_id, content, created_at) VALUES (?, ?, ?, ?)');
+        stmt.run(req.session.user.id, req.params.id, content, new Date().toISOString());
+        res.status(201).json({ message: 'Comment created' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
+app.delete('/comments/:id', (req, res) => {
+    try {
+        if (!req.session.user || !req.session.user.isAdmin) {
+            return res.status(401).json({ message: 'Only admin users can delete comments' });
+        }
+        const stmt = db.prepare('DELETE FROM Comments WHERE id = ?');
+        stmt.run(req.params.id);
+        res.status(200).json({ message: 'Comment deleted' });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+});
+
 app.listen(PORT, () => {
- 
     console.log(`Server running on port ${PORT}...`);
- 
 });
