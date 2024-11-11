@@ -3,49 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Group Recipes</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <div class="login-register">
+    <div class="login-register" id="login-page">
         <div class="left">
           <div class="loginImg"></div>
         </div>
         <div class="right">
           <header>
             <div class="m-left" onclick="history.back()">
-              <img src="images/left.png"/>
+              <img src="/images/left.png"/>
               <span>Go back</span>
             </div>
             <div class="m-right">
                 Not registered?
-                <a href="register.html">register in now</a>
+                <a href="register.html">Register in now</a>
             </div>
           </header>
           <main>
-            <form action="">
+            <form class="form-text" action="dashboard.html" method="POST">
               <div class="title">LOGIN</div>
-              <div class="desc">sign up and join the community</div>
+              <div class="desc">Login to access user features</div>
               <div class="inlineBox username">
-                <img src="images/username.png"/>
-                <input v-model.trim="user.username" type="text" id="username" name="username" placeholder="enter your username" />
-              </div>
-              <div class="inlineBox email">
-                <img src="images/email.png"/>
-                <input v-model.trim="user.email" type="text" id="email" name="email" placeholder="enter your email" />
+                <img src="/images/username.png"/>
+                <input type="text" id="username" name="username" placeholder="enter username" required />
+                <small>Error message!</small>
               </div>
               <div class="inlineBox password">
-                <img src="images/password.png"/>
-                <input v-model.trim="user.password" type="password" id="password" name="password" placeholder="enter your password" />
-                <div class="show" onclick="toggleShow">show</div>
+                <img src="/images/password.png"/>
+                <input type="password" id="password" name="password" placeholder="enter password" required />
+                <small>Error message!</small>
               </div>
-              <div class="btn" onclick="handleClick()">
-                <span>Login</span>
-                <img src="images/right-arrow.png"/>
-              </div>
+              <button type="button" class="btn" id="ajaxLogin">Login</button>
             </form>
           </main>
         </div>
-      </div>
+    </div>
+    <script type="module" src="./scripts/login.js"></script>
 </body>
 </html>
