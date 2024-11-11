@@ -122,6 +122,7 @@ dist
 
 # SQLite Database files
 *.sqlite3
+.db
 
 # TernJS port file
 .tern-port
