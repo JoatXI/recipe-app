@@ -10,7 +10,7 @@ import 'dotenv/config';
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-const sessDb = new Database('session.db');
+const sessDb = new Database(process.env.SESSION_DB || 'session.db');
 const SqliteStore = betterSqlite3Session(expressSession, sessDb);
 
 app.use(express.json());
