@@ -1,0 +1,131 @@
+body {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.ui-w-80 {
+    width: 80px;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background: rgba(0, 0, 0, 0);
+    color: #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background: transparent;
+    color: #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.image-note {
+    color: #000;
+    padding-block: 2px;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100%;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03);
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03);
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03);
+}
+
+.history-btn span {
+    cursor: pointer;
+    color: #2196F3;
+}
+
+.form-group input {
+    border: 2px solid #ebe9e9;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-group.success input {
+    border-color: #23cc71;
+}
+
+.form-group.error input {
+    border-color: #e74c3c;
+}
+
+.form-group.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form-group small {
+    visibility: hidden;
+    position: absolute;
+}
