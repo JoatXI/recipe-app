@@ -1,0 +1,186 @@
+body {
+  font-family: "Arial Thin", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  background: #efebe2;
+}
+
+.login-register {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #717171;
+}
+
+.login-register .left {
+  width: 480px;
+  overflow: hidden;
+  text-align: right;
+  background-color: #ffffff;
+}
+
+.login-register .left div {
+  width: 480px;
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginImg {
+  background-image: url(../images/login.jpg);
+}
+
+.registerImg {
+  background-image: url(../images/register.jpg);
+}
+
+.login-register .right {
+  box-sizing: border-box;
+  margin: 50px;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-register .right header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-register .right header .m-left {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login-register .right header img {
+  width: 1.5em;
+}
+
+.login-register .right header .m-right a {
+  text-decoration: none;
+  color: #333333;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.login-register .right main form {
+  width: 440px;
+}
+
+.login-register .right main form h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #333333;
+}
+
+.login-register .right main form .title {
+  font-size: 46px;
+  font-weight: bolder;
+  text-align: center;
+  color: #333333;
+  margin: 4px 0;
+}
+
+.login-register .right main form .desc {
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin: 4px 0 40px;
+}
+
+.login-register .right main form img {
+  width: 16px;
+  height: 16px;
+}
+
+.login-register .right main form .password img {
+  width: 18px;
+  height: 18px;
+}
+
+.login-register .right main form .password input {
+  margin-left: -2px;
+}
+
+.login-register .right main form .inlineBox {
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #717171;
+  border-radius: 3em;
+  position: relative;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.login-register .right main form .inlineBox .show {
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.login-register .right main form .inlineBox input {
+  display: block;
+  font-family: "Arial Thin", sans-serif;
+  font-size: 22px;
+  font-weight: 100;
+  color: #717171;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.inlineBox.success input {
+  border-color: #23cc71;
+}
+
+.inlineBox.error input {
+  border-color: #e74c3c;
+}
+
+.inlineBox.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.inlineBox small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.login-register .right main form .btn {
+  background-color: #ee6352;
+  border: 2px solid #ee6352;
+  padding: 20px;
+  border-radius: 3em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  font-size: 14px;
+  width: 100%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}

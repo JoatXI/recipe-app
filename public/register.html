@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Recipes</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-register" id="reg-page">
+        <div class="left">
+          <div class="registerImg"></div>
+        </div>
+        <div class="right">
+          <header>
+            <div class="m-left" onclick="history.back()">
+              <img src="/images/left.png"/>
+              <span>Go back</span>
+            </div>
+            <div class="m-right">
+                Already registered?
+                <a href="login.html">Login in now</a>
+            </div>
+          </header>
+          <main>
+            <form class="form-text" action="login.html" method="POST">
+              <div class="title">REGISTER</div>
+              <div class="desc">sign up and join the community</div>
+              <div class="inlineBox email">
+                <img src="/images/email.png"/>
+                <input type="text" id="email" name="email" placeholder="enter your email" required >
+                <small>Error message!</small>
+              </div>
+              <div class="inlineBox username">
+                <img src="/images/username.png"/>
+                <input type="text" id="username" name="username" placeholder="enter your username" required>
+                <small>Error message!</small>
+              </div>
+              <div class="inlineBox password">
+                <img src="/images/password.png"/>
+                <input type="password" id="password" name="password" placeholder="enter your password" required >
+                <small>Error message!</small>
+              </div>
+              <button type="button" class="btn" id="regUser">Register<img src="/images/right-arrow.png"/></button>
+            </form>
+          </main>
+        </div>
+      </div>
+      <script type="module" src="scripts/register.js"></script>
+</body>
+</html>
