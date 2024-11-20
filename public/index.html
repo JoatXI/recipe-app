@@ -3,46 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 1</title>
-    <link rel="stylesheet" href="css/default.css">
+    <title>Group Recipes</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <img src="images/logo.png" alt="The recipe Logo" class="logo-image">
-                <div class="logo-text">
-                    <span class="logo-top">THE</span>
-                    <span class="logo-bottom">Recipe</span>
-                </div>
+                <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
             </div>
             <nav class="nav">
-            <a href="/index.html" class="active">Home</a>
-            <a href="/recipes.html">Recipes</a>
+                <a href="/" class="active">Home</a>
+                <a href="recipes.html">Recipes</a>
+                <div class="header-buttons" id="sign-up">
+                    <a href="register.html"><button class="register-btn">Register</button></a>
+                    <a href="login.html"><button class=login-btn>Login</button></a>
+                </div>
             </nav>
-            <div class="header-buttons">
-                <button class="search-btn"><img src="images/search.png"></button>
-                <button class="register-btn">Register</button>
-                <button class=login-btn>Login</button>
-            </div>
         </div>
     </header>
-
-
     <section class="hero">
         <div class="hero-content">
-          <h1>UNLEASH CULINARY EXCELLENCE</h1>
-          <p>Explore a world of flavors, discover handcrafted recipes, and let the aroma of our passion for cooking fill your kitchen.</p>
-          <a href="/recipes.html"><button class="cta-btn">Explore Recipes</button></a>
+        <h1>UNLEASH CULINARY EXCELLENCE</h1>
+        <p>Explore a world of flavors, discover handcrafted recipes, and let the aroma of our passion for cooking fill your kitchen.</p>
+        <a href="recipes.html"><button class="cta-btn">Explore Recipes</button></a>
         </div>
-      </section>
-
-
+    </section>
+    <br>
+    <br>
     <section class="featured-recipes">
         <div class="featured-recipes-container">
             <h2>FEATURED RECIPES</h2>
@@ -53,10 +45,10 @@
                         <h3>Savory Herb-Infused Chicken</h3>
                         <p>Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken.</p>
                         <p>40 min - Easy Prep - 3 Serves</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
+                        <a href="savory.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
                     </div>
                 </div>
-
                 <div class="recipe-card">
                     <img src="/images/recipe2.png" alt="Decadent Chocolate Mousse">
                     <div class="special-badge">VEGAN</div>
@@ -64,15 +56,13 @@
                         <h3>Decadent Chocolate Mousse</h3>
                         <p>Dive into the velvety indulgence of our Decadent Chocolate Mousse. A dessert that transcends sweetness!</p>
                         <p>30 min - Medium Prep - 4 Serves</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
+                        <a href="decadent.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
     <section class="recipe-section">
         <div class="title-section">
             <h1 style="font-family: Montserrat;">
@@ -83,7 +73,6 @@
                 Welcome to THE Recipe’s treasure trove of cooking wisdom! Whether you’re a seasoned chef or just starting your culinary journey, our cooking tips are designed to elevate your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
             </p>
         </div>
-
         <div class="embark-journey">
             <div class="text-wrapper">
             <span class="journey-tag">RECIPES</span>
@@ -93,103 +82,86 @@
                 </div>
             </div>    
         </div>
-
-            <div class="filter-buttons">
-                <button class="filter-btn active">ALL</button>
-                <button class="filter-btn">VEGAN</button>
-                <button class="filter-btn">BREAKFAST</button>
-                <button class="filter-btn">LUNCH</button>
-                <button class="filter-btn">DINNER</button>
-                <button class="filter-btn">DESSERT</button>
-                <button class="filter-btn">QUICK BITE!</button>
-            </div>
-
-            <div class="recipe-grid">
-                <div class="recipe-card">
-                    <img src="/images/recipe1.png" alt="Savory Herb-Infused Chicken">
-                    <div class="recipe-content">
-                        <h3>Savory Herb-Infused Chicken</h3>
-                        <p>Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken.</p>
-                        <p>40 MIN - EASY PREP - 3 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
-                </div>
-
-                <div class="recipe-card">
-                    <img src="/images/lemon.png" alt="Lemon Garlic Grilled Chicken">
-                    <div class="recipe-content">
-                        <h3>Lemon Garlic Grilled Chicken</h3>
-                        <p>Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe</p>
-                        <p>1 HOUR - HARD PREP - 4 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
-                </div>
-                
-                <div class="recipe-card">
-                    <img src="/images/quinoa.png" alt="Quinoa Veggie Stir-Fry">
-                    <div class="special-badge">VEGAN</div>
-                    <div class="recipe-content">
-                        <h3>Quinoa Veggie Stir-Fry</h3>
-                        <p>Quick, wholesome, and bursting with flavors, it's perfect for a healthy weeknight dinner.</p>
-                        <p>30 MIN - EASY PREP - 3 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
-                </div>
-
-                <div class="recipe-card">
-                    <img src="/images/veggies.png" alt="Grilled Veggies with Sauce">
-                    <div class="special-badge">VEGAN</div>
-                    <div class="recipe-content">
-                        <h3>Grilled Veggies with Sauce</h3>
-                        <p>Served with a zesty chimichurri sauce its a perfect addition to your outdoor gatherings.</p>
-                        <p>25 MIN - MEDIUM PREP - 6 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
-                </div>
-
-                <div class="recipe-card">
-                    <img src="/images/berry.png" alt="Berry Bliss Smoothie Bowl">
-                    <div class="special-badge">VEGAN</div>
-                    <div class="recipe-content">
-                        <h3>Berry Bliss Smoothie Bowl</h3>
-                        <p>This berry smoothie bowl is not only visually appealing but also a powerhouse of antioxidants.</p>
-                        <p>10 MIN - EASY PREP - 2 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
-                </div>
-
-                <div class="recipe-card">
-                    <img src="/images/spag.png" alt="Spaghetti Aglio e Olio">
-                    <div class="special-badge">VEGAN</div>
-                    <div class="recipe-content">
-                        <h3>Spaghetti Aglio e Olio</h3>
-                        <p>A minimalist yet flavorful dish with garlic, olive oil, and a hint of red pepper flakes.</p>
-                        <p>20 MIN - EASY PREP - 2 SERVES</p>
-                        <a href="/view_recipe.html"><button>View Recipe</button></a>
-                    </div>
+        <br>
+        <hr>
+        <br>
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="/images/recipe1.png" alt="Savory Herb-Infused Chicken">
+                <div class="recipe-content">
+                    <h3>Savory Herb-Infused Chicken</h3>
+                    <p>Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken.</p>
+                    <p>40 MIN - EASY PREP - 3 SERVES</p>
+                    <a href="savory.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
                 </div>
             </div>
+
+            <div class="recipe-card">
+                <img src="/images/lemon.png" alt="Lemon Garlic Grilled Chicken">
+                <div class="recipe-content">
+                    <h3>Lemon Garlic Grilled Chicken</h3>
+                    <p>Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe</p>
+                    <p>1 HOUR - HARD PREP - 4 SERVES</p>
+                    <a href="lemon.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="/images/quinoa.png" alt="Quinoa Veggie Stir-Fry">
+                <div class="special-badge">VEGAN</div>
+                <div class="recipe-content">
+                    <h3>Quinoa Veggie Stir-Fry</h3>
+                    <p>Quick, wholesome, and bursting with flavors, it's perfect for a healthy weeknight dinner.</p>
+                    <p>30 MIN - EASY PREP - 3 SERVES</p>
+                    <a href="quinoa.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="/images/veggies.png" alt="Grilled Veggies with Sauce">
+                <div class="special-badge">VEGAN</div>
+                <div class="recipe-content">
+                    <h3>Grilled Veggies with Sauce</h3>
+                    <p>Served with a zesty chimichurri sauce its a perfect addition to your outdoor gatherings.</p>
+                    <p>25 MIN - MEDIUM PREP - 6 SERVES</p>
+                    <a href="grilled.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="/images/berry.png" alt="Berry Bliss Smoothie Bowl">
+                <div class="special-badge">VEGAN</div>
+                <div class="recipe-content">
+                    <h3>Berry Bliss Smoothie Bowl</h3>
+                    <p>This berry smoothie bowl is not only visually appealing but also a powerhouse of antioxidants.</p>
+                    <p>10 MIN - EASY PREP - 2 SERVES</p>
+                    <a href="berry.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="/images/spag.png" alt="Spaghetti Aglio e Olio">
+                <div class="special-badge">VEGAN</div>
+                <div class="recipe-content">
+                    <h3>Spaghetti Aglio e Olio</h3>
+                    <p>A minimalist yet flavorful dish with garlic, olive oil, and a hint of red pepper flakes.</p>
+                    <p>20 MIN - EASY PREP - 2 SERVES</p>
+                    <a href="spaghetti.html"><button>View Recipe</button></a>
+                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                </div>
+            </div>
+        </div>
     </section>
-
-
-
-
-
     <footer class="footer">
         <div class="footer-content">
             <div class="logo">
-                <img src="images/logo.png" alt="The recipe Logo" class="logo-image">
-                <div class="logo-text">
-                    <span class="logo-top">The</span>
-                    <span class="logo-bottom">Recipe</span>
-                </div>
+                <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
             </div>
             <div class="footer-nav">
-                <a href="#">Home</a>
+                <a href="/">Home</a>
                 <p>|</p>
-                <a href="#">Recipes</a>
-                <p>|</p>
-                <a href="#">About Us</a>
+                <a href="recipes.html">Recipes</a>
             </div>
             <div class="footer-social">
                 <a href="#"><img src="/images/tiktok-icon.png" alt="TikTok" /></a>
@@ -202,6 +174,5 @@
             <p>COPYRIGHT: &copy; 2024 The Recipe</p>
         </div>
     </footer>
-
 </body>
 </html>

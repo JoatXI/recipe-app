@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="recipe-number" content="7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decadent Chocolate Mousse Recipe</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="dashboard.html"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
+                </div>
+                <nav class="nav">
+                    <a href="dashboard.html" class="active">Home</a>
+                    <a href="user-recipes.html">Recipes</a>
+                    <img src="images/user.png" class="user-pic" id="pro-pic">
+
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img src="images/user.png" id="pro-pic2" >
+                                <h3 id="signed-user"></h3>
+                            </div>
+                            <hr>
+                            <a href="settings.html" id="settings" class="sub-menu-link">
+                                <img src="images/settings.png">
+                                <p>Edit Profile</p>
+                                <span>></span>
+                            </a>
+                            <a href="favourites.html" id="likes" class="sub-menu-link">
+                                <img class="heart" src="images/heart.png">
+                                <p>Liked Recipes</p>
+                                <span>></span>
+                            </a>
+                            <a href="#" id="logout" class="sub-menu-link">
+                                <img src="images/logout.png">
+                                <p>Logout</p>
+                                <span>></span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="recipe-page">
+            <div class="recipe-header">
+                <div class="text-wrapper">
+                <span class="tag">RECIPE</span>
+                    <h1 class="title">YOUR LIKED RECIPE LIST</h1>
+                    <div class="recipe-info">
+                    <span>LEARN MORE ABOUT EACH LIKED RECIPE BY CLICKING ON THEM</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="recipe-image-container">
+                <img src="images/recipe2.png" alt="Lemon Garlic Roasted Chicken" class="recipe-image">
+            </div>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+            <div class="instruction-section">
+                <div class="instruction-content">
+                    <p2 class="edit-pic-des">The names of your liked recipes are displayed below, click on each each recipe to learn more. If no recipe is displayed this means you are yet to like a recipe</p2>
+                    <h2 class="instruction-title">RECIPES:</h2>
+                    <div class="recipe-list">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="logo">
+                    <a href="dashboard.html"><img src="images/logo.png" alt="The recipe Logo" class="logo-image"></a>
+                </div>
+                <div class="footer-nav">
+                    <a href="dashboard.html">Home</a>
+                    <p>|</p>
+                    <a href="user-recipes.html">Recipes</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><img src="/images/tiktok-icon.png" alt="TikTok" /></a>
+                    <a href="#"><img src="/images/facebook-icon.png" alt="Facebook" /></a>
+                    <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" /></a>
+                    <a href="#"><img src="/images/youtube-cion.png" alt="Youtube" /></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>COPYRIGHT: &copy; 2024 The Recipe</p>
+            </div>
+        </footer>
+    </section>
+    <script type="module" src="scripts/dashboard.js"></script>
+    <script type="module" src="scripts/likeList.js"></script>
+</body>
+</html>
