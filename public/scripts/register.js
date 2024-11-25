@@ -10,9 +10,9 @@ async function regUser(details) {
 
         if (res.status == 401) {
             alert('Invalid Details Provided');
-        } else if (res.status == 200) {
-            window.location.assign('login.html');
+        } else if (res.status == 201) {
             alert('Registration successful. You can now log in');
+            window.location.assign('login.html');
         }
     } catch (error) {
         alert(`An error occurred while logging in ${error}`);
