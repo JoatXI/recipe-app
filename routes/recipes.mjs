@@ -4,7 +4,7 @@ import authUSer from '../middleware/userAuth.mjs';
 
 const recipeRouter = express.Router();
 
-recipeRouter.get('/creator', authUSer, function (req, res) {
+recipeRouter.get('/creator', authUSer, (req, res) => {
     try {
         const stmt = db.prepare('SELECT * FROM Recipes WHERE created_by = ?');
         const recipes = stmt.all(req.session.user.id);
