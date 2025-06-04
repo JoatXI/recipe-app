@@ -4,129 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Recipes</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tester.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
-            </div>
-            <nav class="nav">
-                <a href="/">Home</a>
-                <a href="/recipes.html" class="active">Recipes</a>
-                <div class="header-buttons">
-                    <a href="/register.html"><button class="register-btn">Register</button></a>
-                    <a href="/login.html"><button class=login-btn>Login</button></a>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
                 </div>
-            </nav>
-        </div>
-    </header>
-    <section class="recipe-section">
-        <div class="title-section">
-            <h1 style="font-family: Montserrat;">
-                <span class="line-one">YOUR NEXT</span><br>
-                <span class="line-two">FAVORITE RECIPE</span>
-            </h1>
-            <p class="title-description">
-                Welcome to THE Recipe’s treasure trove of cooking wisdom! Whether you’re a seasoned chef or just starting your culinary journey, our cooking tips are designed to elevate your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
-            </p>
-        </div>
-        <br>
-        <hr>
-        <br>
-        <div class="recipe-grid">
-            <div class="recipe-card">
-                <img src="/images/recipe1.png" alt="Savory Herb-Infused Chicken">
-                <div class="recipe-content">
-                    <h3>Savory Herb-Infused Chicken</h3>
-                    <p>Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken.</p>
-                    <p>40 MIN - EASY PREP - 3 SERVES</p>
-                    <a href="savory.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" id="menu-icon">&#9776;</label>
+                <nav class="nav">
+                    <a href="/">Home</a>
+                    <a href="/recipes.html" class="active">Recipes</a>
+                    <div class="header-buttons">
+                        <a href="/register.html"><button class="register-btn">Register</button></a>
+                        <a href="/login.html"><button class=login-btn>Login</button></a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section class="recipe-section">
+            <div class="title-section">
+                <h1 style="font-family: Montserrat;">
+                    <span class="line-one">YOUR NEXT</span><br>
+                    <span class="line-two">FAVORITE RECIPE</span>
+                </h1>
+                <p class="title-description">
+                    Welcome to THE Recipe’s treasure trove of cooking wisdom! Whether you’re a seasoned chef or just starting your culinary journey, our cooking tips are designed to elevate your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
+                </p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <img src="/images/recipe1.png" alt="Savory Herb-Infused Chicken">
+                    <div class="recipe-content">
+                        <h3>Savory Herb-Infused Chicken</h3>
+                        <p>Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken.</p>
+                        <p>40 MIN - EASY PREP - 3 SERVES</p>
+                        <a href="savory.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="/images/lemon.png" alt="Lemon Garlic Grilled Chicken">
+                    <div class="recipe-content">
+                        <h3>Lemon Garlic Grilled Chicken</h3>
+                        <p>Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe</p>
+                        <p>1 HOUR - HARD PREP - 4 SERVES</p>
+                        <a href="lemon.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
+                </div>
+                
+                <div class="recipe-card">
+                    <img src="/images/quinoa.png" alt="Quinoa Veggie Stir-Fry">
+                    <div class="special-badge">VEGAN</div>
+                    <div class="recipe-content">
+                        <h3>Quinoa Veggie Stir-Fry</h3>
+                        <p>Quick, wholesome, and bursting with flavors, it's perfect for a healthy weeknight dinner.</p>
+                        <p>30 MIN - EASY PREP - 3 SERVES</p>
+                        <a href="quinoa.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="/images/veggies.png" alt="Grilled Veggies with Sauce">
+                    <div class="special-badge">VEGAN</div>
+                    <div class="recipe-content">
+                        <h3>Grilled Veggies with Sauce</h3>
+                        <p>Served with a zesty chimichurri sauce its a perfect addition to your outdoor gatherings.</p>
+                        <p>25 MIN - MEDIUM PREP - 6 SERVES</p>
+                        <a href="grilled.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="/images/berry.png" alt="Berry Bliss Smoothie Bowl">
+                    <div class="special-badge">VEGAN</div>
+                    <div class="recipe-content">
+                        <h3>Berry Bliss Smoothie Bowl</h3>
+                        <p>This berry smoothie bowl is not only visually appealing but also a powerhouse of antioxidants.</p>
+                        <p>10 MIN - EASY PREP - 2 SERVES</p>
+                        <a href="berry.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="/images/spag.png" alt="Spaghetti Aglio e Olio">
+                    <div class="special-badge">VEGAN</div>
+                    <div class="recipe-content">
+                        <h3>Spaghetti Aglio e Olio</h3>
+                        <p>A minimalist yet flavorful dish with garlic, olive oil, and a hint of red pepper flakes.</p>
+                        <p>20 MIN - EASY PREP - 2 SERVES</p>
+                        <a href="spaghetti.html"><button>View Recipe</button></a>
+                        <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+                    </div>
                 </div>
             </div>
-            <div class="recipe-card">
-                <img src="/images/lemon.png" alt="Lemon Garlic Grilled Chicken">
-                <div class="recipe-content">
-                    <h3>Lemon Garlic Grilled Chicken</h3>
-                    <p>Experience the perfect blend of zesty lemon and aromatic garlic with this roasted chicken recipe</p>
-                    <p>1 HOUR - HARD PREP - 4 SERVES</p>
-                    <a href="lemon.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
+        </section>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
+                </div>
+                <div class="footer-nav">
+                    <a href="/">Home</a>
+                    <p>|</p>
+                    <a href="recipes.html">Recipes</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><img src="/images/tiktok-icon.png" alt="TikTok" /></a>
+                    <a href="#"><img src="/images/facebook-icon.png" alt="Facebook" /></a>
+                    <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" /></a>
+                    <a href="#"><img src="/images/youtube-cion.png" alt="Youtube" /></a>
                 </div>
             </div>
-            
-            <div class="recipe-card">
-                <img src="/images/quinoa.png" alt="Quinoa Veggie Stir-Fry">
-                <div class="special-badge">VEGAN</div>
-                <div class="recipe-content">
-                    <h3>Quinoa Veggie Stir-Fry</h3>
-                    <p>Quick, wholesome, and bursting with flavors, it's perfect for a healthy weeknight dinner.</p>
-                    <p>30 MIN - EASY PREP - 3 SERVES</p>
-                    <a href="quinoa.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
-                </div>
+            <div class="footer-bottom">
+                <p>COPYRIGHT: &copy; 2024 The Recipe</p>
             </div>
-            <div class="recipe-card">
-                <img src="/images/veggies.png" alt="Grilled Veggies with Sauce">
-                <div class="special-badge">VEGAN</div>
-                <div class="recipe-content">
-                    <h3>Grilled Veggies with Sauce</h3>
-                    <p>Served with a zesty chimichurri sauce its a perfect addition to your outdoor gatherings.</p>
-                    <p>25 MIN - MEDIUM PREP - 6 SERVES</p>
-                    <a href="grilled.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="/images/berry.png" alt="Berry Bliss Smoothie Bowl">
-                <div class="special-badge">VEGAN</div>
-                <div class="recipe-content">
-                    <h3>Berry Bliss Smoothie Bowl</h3>
-                    <p>This berry smoothie bowl is not only visually appealing but also a powerhouse of antioxidants.</p>
-                    <p>10 MIN - EASY PREP - 2 SERVES</p>
-                    <a href="berry.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <img src="/images/spag.png" alt="Spaghetti Aglio e Olio">
-                <div class="special-badge">VEGAN</div>
-                <div class="recipe-content">
-                    <h3>Spaghetti Aglio e Olio</h3>
-                    <p>A minimalist yet flavorful dish with garlic, olive oil, and a hint of red pepper flakes.</p>
-                    <p>20 MIN - EASY PREP - 2 SERVES</p>
-                    <a href="spaghetti.html"><button>View Recipe</button></a>
-                    <a href="login.html"><img id="like-one" class="fav" src="images/like.png" alt="Like icon"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="logo">
-                <a href="/"><img src="images/logo.png" alt="The Recipe Logo" class="logo-image"></a>
-            </div>
-            <div class="footer-nav">
-                <a href="/">Home</a>
-                <p>|</p>
-                <a href="recipes.html">Recipes</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><img src="/images/tiktok-icon.png" alt="TikTok" /></a>
-                <a href="#"><img src="/images/facebook-icon.png" alt="Facebook" /></a>
-                <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" /></a>
-                <a href="#"><img src="/images/youtube-cion.png" alt="Youtube" /></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>COPYRIGHT: &copy; 2024 The Recipe</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
