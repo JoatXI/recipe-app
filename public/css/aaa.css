@@ -625,7 +625,7 @@ h3 {
 
 /* add_recipe */
 .recipe-page {
-    padding: 20px;
+    padding: 1.25rem;
     border-radius: 32px;
     border: 1px solid #2625223D;
 }
@@ -639,30 +639,28 @@ h3 {
 .tag {
     background-color: #EE6352;
     border-radius: 12px;
-    padding: 4px 8px 4px 8px;
+    padding: .25rem .5rem .25rem .5rem;
     color: #F0EBE1;
-    font-family: Roboto, sans-serif;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    width: 72px;
-    height: 24px;
-    gap: 10px;
+    font-size: .875rem;
+    line-height: 1rem;
+    width: 4.5rem;
+    height: 1.5rem;
+    gap: .625rem;
 }
 
 .title {
-    font-size: 80px;
     font-weight: 800;
-    line-height: 80px;
+    line-height: 5rem;
     font-family: Montserrat;
     text-align: center;
-    width: 870px;
-    padding: 20px;
+    width: 54.375rem;
+    padding: 1.25rem;
 }
 
 .recipe-info {
     color:#262522;
-    gap: 24px;
+    gap: 1.5rem;
     font-size: 0.9rem;
 }
 
@@ -671,8 +669,8 @@ h3 {
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-    max-width: 80%; 
-    height: 600px; 
+    max-width: 80%;
+    height: 37.5rem;
     overflow: hidden; 
     border-radius: 24px;
 }
@@ -688,31 +686,30 @@ h3 {
     flex-direction: space-between;
     align-items: flex-start;
     width: 100%;
-    padding: 0 50px;
-    margin-top: 30px;
+    padding: 0 3.125rem;
+    margin-top: 1.875rem;
 }
 
 .instruction-content{
-    max-width: 500px;
+    max-width: 31.25rem;
 }
 
 .instruction-title {
     font-family: Montserrat;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
     letter-spacing: 1%;
-    margin-bottom: 10px;
-    padding-top: 25px;
-    padding-bottom: 10px;
+    margin-bottom: .625rem;
+    padding-top: 1.563rem;
+    padding-bottom: .625rem;
     color: #333333;
 }
 
 .edit-instructions, .edit-pic-des{
-    font-size: 16px;
-    font-family: Roboto, sans-serif;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 22.4px;
+    line-height: 1.375rem;
     color: #333333CC;
     letter-spacing: 1%;
 }
@@ -720,52 +717,52 @@ h3 {
 .info-boxes{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: .928rem;
     width: 35%;
-    margin-top: 12px;
-    max-width: 350px;
+    margin-top: .75rem;
+    max-width: 21.875rem;
     margin-left: auto;
 }
 
 .info-box{
     background-color: #FFFBF2;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: .625rem;
+    padding: 1.25rem;
+    box-shadow: 0px .25 .625rem rgba(0, 0, 0, 0.1);
 }
 
 .info-box h3{
     font-size: 1.1rem;
     font-family: Montserrat;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
     letter-spacing: 2%;
-    padding-bottom: 10px;
+    padding-bottom: .625rem;
     color: #ff6b6b;
 }
 
 .info-box ul{
     list-style-type: circle;
-    padding-left: 10px;
+    padding-left: .625rem;
     margin: 0;
 }
 
 .info-box ul li, .info-box p {
-    font-size: 14px;
+    font-size: .875rem;
     color: #262522;
     line-height: 1.5;
 }
 
 .info-box p {
-    margin: 5px 0;
+    margin: .313rem 0;
 }
 
 .comment-section {
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    border-radius: 50px;
+    padding: 3.125rem;
+    border-radius: 3.125rem;
     border: 1px solid rgba(38, 37, 34, 0.24);
 }
 
@@ -779,33 +776,33 @@ h3 {
 }
 
 .comment-box textarea {
-    max-width: 500px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-block: 20px;
+    max-width: 31.25rem;
+    height: 3.125rem;
+    padding: .625rem;
+    border-radius: .625rem;
+    margin-block: 1.25rem;
 }
 
 .comment-box a {
-    width: 150px;
-    height: 30px;
-    border-radius: 5px;
+    width: 9.375rem;
+    height: 1.875rem;
+    border-radius: .313rem;
     background-color: #f75e4a;
     color: #F0EBE1;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
 }
 
 .comment-box button {
-    width: 150px;
-    height: 30px;
-    border-radius: 5px;
+    width: 9.375rem;
+    height: 1.875rem;
+    border-radius: .313rem;
     background-color: #f75e4a;
     color: #F0EBE1;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
 }
 
 .comment-box button:hover {
@@ -815,7 +812,7 @@ h3 {
 }
 
 .comment {
-    margin-block: 20px;
+    margin-block: 1.25rem;
 }
 
 .comment strong {
@@ -823,10 +820,10 @@ h3 {
 }
 
 .comment button {
-    width: 50px;
-    height: 20px;
-    margin-left: 25px;
-    border-radius: 5px;
+    width: 3.125rem;
+    height: 1.25;
+    margin-left: 1.563rem;
+    border-radius: .313rem;
     border: 1px solid #333;
     background-color: red;
     color: #fff;
@@ -857,30 +854,29 @@ h3 {
 .note{
     color: #33333399;
     font-family: Roboto, sans-serif;
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 500;
-    line-height: 14.4px;
+    line-height: .875rem;
     letter-spacing: 0.01em;
     text-align: left;
 }
 
 .subtitle-instructions{
-    padding-bottom: 15px;
+    padding-bottom: .938rem;
     color: #EE6352;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 1.125rem;
     letter-spacing: 0.02em;
 }
 
 .instruction-list{
-    padding-left: 20px;
+    padding-left: 1.25;
     margin: 0;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 22.4px;
+    line-height: 1.375rem;
     letter-spacing: 0.01em;
     color: #333333CC;
 }
@@ -889,20 +885,18 @@ h3 {
     list-style-type: upper;
     padding-left: 20px;
     margin: 0;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 22.4px;
+    line-height: 1.375rem;
     letter-spacing: 0.01em;
     color: #333333CC;
 }
 
 .pairing-list{
     margin: 0;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 22.4px;
+    line-height: 1.375rem;
     letter-spacing: 0.01em;
     color: #333333CC;
 }
@@ -910,10 +904,9 @@ h3 {
 .link-text{
     text-decoration: underline;
     color: #EE6352;
-    font-family: Roboto, sans-serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19.2px;
+    font-size: 1rem;
+    line-height: 1.25rem;
     letter-spacing: 1%;
 }
 
@@ -924,35 +917,34 @@ h3 {
 }
 
 .bio-content h4{
-    font-family: Roboto;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
-    line-height: 19.2px;
+    line-height: 1.25rem;
     letter-spacing: 0.01em;
     color: #33333399;
 }
 
 .bio-content h4, .bio-content p{
-    padding-left: 50px;
+    padding-left: 3.125rem;
 }
 
 .learn-more-btn{
-    margin-top: 20px;
-    border-radius: 24px;
+    margin-top: 1.25rem;
+    border-radius: 1.5rem;
     border: 1px solid #262522;
     background-color: #F0EBE1;
-    padding: 12px 24px 12px 24px;
-    margin-left: 50px;
+    padding: .75rem 1.5rem .75rem 1.5rem;
+    margin-left: 3.125rem;
 }
 
 .seperation-line{
     color: #26252214;
-    width: 648px;
-    height: 0px;
-    gap: 0px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    margin-bottom: 40px;
+    width: 40.5rem;
+    height: 0;
+    gap: 0;
+    border-top: 1px;
+    opacity: 0;
+    margin-bottom: 2.5rem;
 }
 
 .author-photo-container {
@@ -960,7 +952,7 @@ h3 {
     justify-content: center;
     align-items: center;
     overflow: hidden; 
-    border-radius: 12px;
+    border-radius: .75rem;
     transform: scale(1.5); 
 }
 
@@ -972,12 +964,12 @@ h3 {
 }
 
 .recipe-list {
-    margin-top: 20px;
-    font-size: 2rem;
+    margin-top: 1.25rem;
+    font-size: var(--fs-large);
 }
 
 .recipe-item {
-    margin: 10px 0;
+    margin: .625rem 0;
 }
 
 .recipe-link {
@@ -993,7 +985,7 @@ h3 {
 /* Add Recipe CSS */
 
 .my-recipes {
-    margin: 30px;
+    margin: 1.875rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1003,20 +995,19 @@ h3 {
 .recipeList {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: 20px;
+    max-width: 31.25rem;
+    margin: 1.25rem;
 }
 
 .recipeList h3 {
     text-align: center;
-    font-size: 1.5rem;
     color: #D35400;
 }
 
 .recipeList p {
-    font-size: 1.20rem;
+    font-size: 1rem;
     text-align: center;
-    margin-block: 8px;
+    margin-block: .5rem;
 }
 
 .add-section {
@@ -1028,76 +1019,266 @@ h3 {
 .add-content {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .add-content h2 {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 
 .add-content label {
-    margin-bottom: 8px;
+    margin-bottom: .5rem;
     font-size: 1.25rem;
     font-weight: 400;
     font-style: italic;
 }
 
 .add-content .rep-name {
-    margin-bottom: 20px;
-    padding: 10px;
-    max-width: 430px;
-    height: 30px;
+    margin-bottom: 1.25rem;
+    padding: .625rem;
+    max-width: 26.875rem;
+    height: 1.875rem;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: .625rem;
     border: 1px solid #353432;
 }
 
 .add-content .rep-steps {
-    margin-bottom: 20px;
-    padding: 10px;
-    max-width: 430px;
-    height: 200px;
+    margin-bottom: 1.25rem;
+    padding: .625rem;
+    max-width: 26.875rem;
+    height: 12.5rem;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: .625rem;
     border: 1px solid #353432;
     resize: vertical;
 }
 
 .add-content .rep-desc {
-    margin-bottom: 20px;
-    padding: 10px;
-    max-width: 430px;
-    height: 60px;
+    margin-bottom: 1.25rem;
+    padding: .625rem;
+    max-width: 26.875rem;
+    height: 3.75rem;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: .625rem;
     border: 1px solid #353432;
     resize: vertical;
 }
 
 .add-content .rep-ing {
-    margin-bottom: 20px;
-    padding: 10px;
-    max-width: 430px;
-    height: 100px;
+    margin-bottom: 1.25rem;
+    padding: .625rem;
+    max-width: 26.875rem;
+    height: 6.25rem;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: .625rem;
     border: 1px solid #353432;
     resize: vertical;
 }
 
 .add-content button {
-    width: 150px;
-    height: 30px;
-    border-radius: 5px;
+    width: 9.375rem;
+    height: 1.875rem;
+    border-radius: .313rem;
     background-color: #f75e4a;
     color: #F0EBE1;
     font-size: 1rem;
     cursor: pointer;
-    margin-bottom: 35px;
+    margin-bottom: 2.188rem;
 }
 
 .add-content button:hover {
     background-color: #f1a674;
     color: #000;
     font-weight: 700;
+}
+
+@media screen and (width <= 906px) {
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (width >= 561px) and (max-width: 768px) {
+    .wrapper {
+        border: 2px solid red;
+    }
+
+    .recipe-page {
+        border: 2px solid green;
+    }
+
+    .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        width: 80%;
+        line-height: var(--fs-xlarge);
+    }
+
+    .nav {
+        right: 0;
+        top: 59px;
+        z-index: 1;
+        width: 100%;
+        opacity: 80%;
+        display: none;
+        position: absolute;
+        text-align: center;
+        flex-direction: column;
+        background-color: var(--clr-neutral-900);
+    }
+
+    .nav a {
+        margin: 0;
+        padding: 10px;
+        color: #fff !important;
+        text-align: center;
+        border-bottom: 1px solid #aed3d6;
+    }
+
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-btn {
+        padding: 0;
+        color: #fff;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .login-btn {
+        padding: 0;
+        color: #fff;
+        border-radius: 0;
+        background-color: var(--clr-neutral-900);
+    }
+
+    .recipe-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    #menu-toggle:checked + #menu-icon {
+        color: #000;
+    }
+    
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+}
+
+@media screen and (width <= 560px) {
+    .nav {
+        right: 0;
+        top: 59px;
+        z-index: 1;
+        width: 50%;
+        opacity: 80%;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background-color: var(--clr-neutral-900);
+    }
+
+    .nav a {
+        margin: 0;
+        color: #fff;
+        padding: .625rem;
+        text-align: center;
+        border-bottom: 1px solid #aed3d6;
+    }
+
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-btn {
+        padding: 0;
+        color: #fff;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .login-btn {
+        padding: 0;
+        color: #fff;
+        border-radius: 0;
+        background-color: var(--clr-neutral-900);
+    }
+
+    .recipe-carousel {
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .title-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-section h1 {
+        text-align: center;
+    }
+
+    .title-section .title-description {
+        text-align: center;
+    }
+
+    .recipe-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        margin: 0;
+        padding-block: .5rem;
+        display: flex;
+        border-radius: 0;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .wrapper .footer {
+        width: 100%;
+        margin-inline: 0;
+        margin-bottom: 0;
+    }
+
+    .footer-content .logo {
+        display: none;
+    }
+
+    .footer-social {
+        display: none;
+    }
+
+    #menu-toggle:checked + #menu-icon {
+        color: #000;
+    }
+
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+    }
 }
