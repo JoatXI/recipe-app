@@ -545,7 +545,6 @@ h3 {
     padding: 1rem .5rem;
     color: #F0EBE199;
     margin-top: 2rem;
-    border-radius: 3.125rem;
     background-color: #797877;
     font-family: 'Roboto', sans-serif;
     border: 1px solid rgba(38, 37, 34, 0.24);
@@ -626,7 +625,7 @@ h3 {
 /* add_recipe */
 .recipe-page {
     padding: 1.25rem;
-    border-radius: 32px;
+    border-radius: 25px;
     border: 1px solid #2625223D;
 }
 
@@ -695,9 +694,8 @@ h3 {
 }
 
 .instruction-title {
-    font-family: Montserrat;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: var(--fs-headers);
     line-height: 2.5rem;
     letter-spacing: 1%;
     margin-bottom: .625rem;
@@ -733,7 +731,6 @@ h3 {
 
 .info-box h3{
     font-size: 1.1rem;
-    font-family: Montserrat;
     font-weight: 600;
     font-size: 1.125rem;
     line-height: 1.125rem;
@@ -762,12 +759,12 @@ h3 {
     display: flex;
     flex-direction: column;
     padding: 3.125rem;
-    border-radius: 3.125rem;
+    border-radius: 25px;
     border: 1px solid rgba(38, 37, 34, 0.24);
 }
 
 .comment-section h4 {
-    font-size: 2rem;
+    font-size: var(--fs-headers);
 }
 
 .comment-box {
@@ -1101,12 +1098,9 @@ h3 {
 }
 
 @media screen and (width >= 561px) and (max-width: 768px) {
-    .wrapper {
-        border: 2px solid red;
-    }
-
     .recipe-page {
-        border: 2px solid green;
+        display: flex;
+        flex-direction: column;
     }
 
     .text-wrapper {
@@ -1115,110 +1109,27 @@ h3 {
         align-items: center;
     }
 
+    .recipe-image-container {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .instruction-section {
+        flex-direction: column;
+    }
+
     .title {
         width: 80%;
         line-height: var(--fs-xlarge);
-    }
-
-    .nav {
-        right: 0;
-        top: 59px;
-        z-index: 1;
-        width: 100%;
-        opacity: 80%;
-        display: none;
-        position: absolute;
-        text-align: center;
-        flex-direction: column;
-        background-color: var(--clr-neutral-900);
-    }
-
-    .nav a {
-        margin: 0;
-        padding: 10px;
-        color: #fff !important;
-        text-align: center;
-        border-bottom: 1px solid #aed3d6;
-    }
-
-    .header-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .register-btn {
-        padding: 0;
-        color: #fff;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
-    .login-btn {
-        padding: 0;
-        color: #fff;
-        border-radius: 0;
-        background-color: var(--clr-neutral-900);
     }
 
     .recipe-grid {
         display: flex;
         flex-direction: column;
     }
-
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-
-    #menu-toggle:checked + #menu-icon {
-        color: #000;
-    }
-    
-    #menu-toggle:checked ~ nav {
-        display: flex;
-    }
 }
 
 @media screen and (width <= 560px) {
-    .nav {
-        right: 0;
-        top: 59px;
-        z-index: 1;
-        width: 50%;
-        opacity: 80%;
-        display: none;
-        position: absolute;
-        flex-direction: column;
-        background-color: var(--clr-neutral-900);
-    }
-
-    .nav a {
-        margin: 0;
-        color: #fff;
-        padding: .625rem;
-        text-align: center;
-        border-bottom: 1px solid #aed3d6;
-    }
-
-    .header-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .register-btn {
-        padding: 0;
-        color: #fff;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
-    .login-btn {
-        padding: 0;
-        color: #fff;
-        border-radius: 0;
-        background-color: var(--clr-neutral-900);
-    }
-
     .recipe-carousel {
         gap: 2rem;
         display: flex;
@@ -1262,23 +1173,42 @@ h3 {
         margin-bottom: 0;
     }
 
+    .text-wrapper {
+        margin-top: .625rem;
+    }
+
+    .recipe-page {
+        display: flex;
+        padding: .125rem;
+        flex-direction: column;
+    }
+
+    .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-image-container {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .instruction-section {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    .title {
+        width: 100%;
+        line-height: var(--fs-xlarge);
+    }
+
     .footer-content .logo {
         display: none;
     }
 
     .footer-social {
         display: none;
-    }
-
-    #menu-toggle:checked + #menu-icon {
-        color: #000;
-    }
-
-    #menu-toggle:checked ~ nav {
-        display: flex;
-    }
-
-    #menu-icon {
-        display: block;
     }
 }
